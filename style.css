@@ -1,0 +1,98 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;      /* Limit to viewport height */
+  overflow: hidden;   /* Hide anything beyond it */
+}
+
+
+:root {
+  touch-action: pan-x pan-y;
+  height: 100% 
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+  body {
+    background-color: #07103D;
+    overflow-y: hidden; /* Disable vertical scrolling */
+    overflow-x: auto; /* Enable horizontal scrolling */
+  }
+
+  .container-wrapper {
+    width: 100vw; /* Set the width to 100% of the viewport width */
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    overflow: hidden; /* Hide overflow */
+  }
+
+  .background {
+    width: 17px; /* Add extra space for scrollbar */
+    height: 100%; /* Set the height to 100% */
+    white-space: nowrap; /* Prevent wrapping of inline elements */
+  }
+
+  div {
+    display: inline-block; /* Display content elements inline */
+    vertical-align: top; /* Align content elements to the top */
+    width: 100vw; /* Set width to viewport width */
+    height: 100vh; /* Set height to viewport height */
+
+  
+  /* Inside the main container, assuming your content elements have a class named 'content' */
+  .container .bg-thuringiadiv {
+    display: inline-block; /* Display content elements inline */
+    white-space: normal; /* Reset white-space for content elements */
+    vertical-align: top; /* Align content elements to the top */
+  }
+
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .background {
+    overflow-x: auto;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+  }
+  
+  .background>div {
+    background: 07103D;
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+    margin-left: -4px;
+  }
+  
+  .background>div:first-child {
+    margin-left: 0;
+  }
+  
+
+
+.container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.panel {
+  min-width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+/* Each horizontal section */
+.panel {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+
