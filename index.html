@@ -9,13 +9,12 @@
 
 <meta content='width=5000px; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
 
-
     </head>
     <body>
 
 
-
 <div class="viewport" style="overflow: hidden; width: 20%; margin: 0;">
+
     <div class="panel" style ="display: flex; align-items: left; justify-content: left; flex-wrap: wrap;" >
 	<h2 style="margin-left: 40px; margin-top: 45px; font-family: SedanSC; color:#ffffff; width:100%; font-size: 40px;position:absolute;">Curriculum Vitae</h2>
 	<div class="circle" style="background-image:url('images/image.svg'); background-size: 100%; border-radius: 50%; width: 360px; height: 360px; margin-left: -38px; margin-top: 150px;position:absolute;"></div>
@@ -302,19 +301,29 @@
 </div>
 
 <script>
-window.addEventListener("wheel", (e) => {
-  document.querySelector(".container")
-    .scrollLeft += e.deltaY;
-});
 
-
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Tab") {
-    e.preventDefault();
-  document.querySelector(".container")
-    .scrollLeft += e.deltaY;
+$('body').on('mouseover', function(e) {
+  "use strict";
+  var mouseSide;
+  if ((e.pageX - this.offsetLeft) < $(this).width() / 2) {
+    $('body').slickPrev(); 
+  } else {
+    $('body').slickNext();
   }
 });
+$('body').slick({
+  arrows: true,
+  infinite: true,
+  pauseOnHover: false, 
+  speed: 500,
+  slidesToShow: 1,
+  centerMode: true,
+  variableWidth: true,
+  autoplay: true,
+  autoplaySpeed: 2000
+});
+
+
 </script>
 
     </body>
